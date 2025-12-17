@@ -14,6 +14,9 @@ runs:
         OS_NAME=$(echo "${{ runner.os }}" | tr '[:upper:]' '[:lower:]')
         if [ "$OS_NAME" = "macos" ]; then
           OS_NAME="darwin"
+        elif [ "$OS_NAME" != "linux" ]; then
+          echo "Error: Unsupported operating system '${{ runner.os }}'. Only Linux and macOS are supported."
+          exit 1
         fi
         echo "SMLPKG_OS=$OS_NAME" >> "$GITHUB_ENV"
     - id: fetch
