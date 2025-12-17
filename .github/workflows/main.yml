@@ -1,0 +1,26 @@
+on: [push]
+
+jobs:
+  test_job:
+    runs-on: ${{ matrix.os }}
+    name: Test installation on ${{ matrix.os }}
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: install-version
+        uses: diku-dk/install-smlpkg@HEAD
+        with:
+          version: '0.1.5'
+      - id: install-no-version
+        uses: diku-dk/install-smlpkg@HEAD
+      - id: install-latest
+        uses: diku-dk/install-smlpkg@HEAD
+        with:
+          version: 'latest'
+
+      - run: smlpkg --help
