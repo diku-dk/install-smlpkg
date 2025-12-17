@@ -1,6 +1,6 @@
 # Install smlpkg
 
-This action installs smlpkg in a Linux-based GitHub Actions runner.
+This action installs smlpkg in a GitHub Actions runner (Linux and macOS).
 The package manager is installed in `$HOME/.local`, which means it will be on
 the `$PATH` of a standard setup.
 
