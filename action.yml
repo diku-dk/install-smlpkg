@@ -21,6 +21,7 @@ runs:
       working-directory: 'smlpkg-install-dir/'
       run: |
         tar xvf smlpkg-bin-dist-linux.tgz
+        mkdir -p $HOME/.local/bin
         make -C smlpkg-bin-dist-linux install PREFIX=$HOME/.local
     - id: cleanup
       shell: bash
