@@ -23,4 +23,4 @@ jobs:
         with:
           version: 'latest'
 
-      - run: smlpkg --help
+      - run: smlpkg --version
