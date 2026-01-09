@@ -15,7 +15,7 @@ jobs:
       - id: install-version
         uses: diku-dk/install-smlpkg@HEAD
         with:
-          version: '0.1.5'
+          version: '0.1.7'
       - id: install-no-version
         uses: diku-dk/install-smlpkg@HEAD
       - id: install-latest
